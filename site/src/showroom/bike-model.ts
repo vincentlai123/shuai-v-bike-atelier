@@ -283,7 +283,7 @@ export function createBikeModel(onVisualChange?: () => void): BikeModel {
   const chain = new THREE.InstancedMesh(linkGeometry, chainMat, 224); root.add(chain);
 
   if (typeof document !== "undefined") {
-    const texture = new THREE.TextureLoader().load('/images/birdy-wordmark.png', loaded => {
+    const texture = new THREE.TextureLoader().load(`${import.meta.env.BASE_URL}images/birdy-wordmark.png`, loaded => {
       if (disposed) { loaded.dispose(); return; }
       onVisualChange?.();
     });

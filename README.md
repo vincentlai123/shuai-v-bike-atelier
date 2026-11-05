@@ -12,6 +12,9 @@ C 版「3D 立體車庫」首頁的**可互動預覽**，與 ChatGPT 託管的�
 - 3D 模組直接移植自正式站 `app/dashboard/`，邏輯未改：
   `bike-model.ts`、`birdy-carbon-wheel.ts`、`birdy-detail-parts.ts`、`birdy-frame-geometry.ts`、
   `showroom-scene.ts`、`showroom-studio.ts`（見 `site/src/showroom/`）。
+  唯一改動：`bike-model.ts` 的車架字標貼圖路徑改用 `import.meta.env.BASE_URL`（GitHub Pages 子路徑）。
+- 車架 `birdy` 字標貼圖 `images/birdy-wordmark.png` 為依正式站取樣範圍（280×40 版面、x 20–148）重新產生的 alpha 貼圖；
+  正式站原檔位於登入牆後，未取用。
 - React 的 `BikeShowroom` 改寫為原生 TypeScript 控制器 `site/src/main.ts`，同樣的狀態流程與場景 API 呼叫。
 - 樣式沿用正式站 `race-design.css`（`site/src/race-design.css`，以 `body[data-design="race"][data-view="home"]` 套用），
   外框（預覽列、導覽、現役車隊、工作台）在 `site/src/atelier.css`。
