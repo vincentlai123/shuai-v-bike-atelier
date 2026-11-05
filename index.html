@@ -3,17 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>帥V 私人車庫 · BIRDY 3 單車鑑賞室（視覺預覽）</title>
-<meta name="description" content="帥V 私人車庫 C 版 3D 立體車庫首頁的靜態視覺預覽。">
-<meta name="theme-color" content="#0c1310">
-<link rel="stylesheet" href="styles.css">
+<title>帥V 私人車庫 · BIRDY 3 單車鑑賞室（3D 預覽）</title>
+<meta name="description" content="帥V 私人車庫 C 版 3D 立體車庫首頁預覽：以正式站 Three.js 模組移植的可互動 BIRDY 3 展廳。">
+<meta name="theme-color" content="#101112">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%228%22 fill=%22%23e2d8c3%22/%3E%3Ctext x=%2216%22 y=%2223%22 font-size=%2218%22 font-weight=%22800%22 text-anchor=%22middle%22 fill=%22%23252421%22 font-family=%22sans-serif%22%3EV%3C/text%3E%3C/svg%3E">
+  <script type="module" crossorigin src="/shuai-v-bike-atelier/assets/index-D6bYFL5D.js"></script>
+  <link rel="stylesheet" crossorigin href="/shuai-v-bike-atelier/assets/index-58Yo-LP_.css">
 </head>
-<body>
+<body data-design="race" data-view="home">
 <a class="skip" href="#main">跳至主要內容</a>
 
 <div class="preview-bar" role="note">
   <span class="preview-badge"><i aria-hidden="true"></i>C · 3D立體車庫 預覽</span>
-  <span class="preview-text">靜態視覺預覽，無登入、不存資料</span>
+  <span class="preview-text">真實 Three.js 展廳 · 無登入、不存資料</span>
   <a class="preview-link" href="https://shuai-v-bike-system.vinlai125.chatgpt.site" target="_blank" rel="noopener">正式站另開<span aria-hidden="true">↗</span></a>
 </div>
 
@@ -35,9 +37,9 @@
 <main id="main" class="race-home">
   <section class="race-showcase" aria-labelledby="race-showcase-title">
     <div class="race-intro">
-      <div>
+      <div class="race-intro-heading">
         <p class="race-kicker"><span aria-hidden="true"></span>帥V 私人車庫 / THE ATELIER</p>
-        <h1 id="race-showcase-title"><strong class="race-bike-name">BIRDY 3</strong><span class="race-title-phrase">單車鑑賞室<span class="race-title-dot">。</span></span></h1>
+        <h2 id="race-showcase-title"><strong class="race-bike-name">BIRDY 3</strong><span class="race-title-phrase">單車鑑賞室<span class="race-title-dot">。</span></span></h2>
       </div>
       <div class="race-intro-aside">
         <p>從完整輪廓，到細微光影。<br>你的 BIRDY，值得慢慢看。</p>
@@ -45,59 +47,51 @@
       </div>
     </div>
 
-    <div class="bike-showroom">
-      <div class="showroom-canvas" id="stage" data-light="studio">
-        <div class="stage-backdrop" aria-hidden="true"></div>
-        <img class="stage-bike" src="assets/stage-birdy.jpg" alt="白色 BIRDY 3 摺疊車，於深色攝影棚中斜前方展示" width="562" height="442">
-        <div class="stage-floor" aria-hidden="true"></div>
-        <div class="showroom-scene-caption">
-          <span><i aria-hidden="true"></i>01 / 3 / CARBON STUDY</span>
-          <p>靜態展台 · 可旋轉的 3D 展廳在正式站</p>
-        </div>
-        <div class="showroom-light-controls" role="group" aria-label="展台光線">
-          <span class="showroom-control-eyebrow">LIGHT</span>
-          <button type="button" aria-pressed="true" data-light="studio">棚拍</button>
-          <button type="button" aria-pressed="false" data-light="night">夜幕</button>
-        </div>
+    <section class="bike-showroom" id="bike-showroom" data-scene-status="loading" data-render-state="loading" data-focus="hero" data-mood="atelier" aria-label="可互動的 BIRDY 3 立體展示">
+      <div class="showroom-scene-caption"><span><i aria-hidden="true"></i>BIRDY 3 / CARBON STUDY</span><p>拖曳旋轉 · 滾輪或雙指縮放</p></div>
+      <div class="showroom-light-controls" role="group" aria-label="攝影棚光線">
+        <span class="showroom-control-eyebrow">LIGHT</span>
+        <button type="button" data-mood="atelier" aria-pressed="true" disabled>棚拍</button>
+        <button type="button" data-mood="noir" aria-pressed="false" disabled>夜幕</button>
+        <button type="button" data-mood="glacier" aria-pressed="false" disabled>冷光</button>
       </div>
-
-      <div class="showroom-focus-rail" role="group" aria-label="觀看焦點（預覽）">
-        <button type="button" aria-pressed="true"><span>01</span>全車輪廓<i aria-hidden="true"></i></button>
-        <button type="button" aria-pressed="false"><span>02</span>車架鉸接<i aria-hidden="true"></i></button>
-        <button type="button" aria-pressed="false"><span>03</span>傳動系統<i aria-hidden="true"></i></button>
-        <button type="button" aria-pressed="false"><span>04</span>五刀碳輪<i aria-hidden="true"></i></button>
+      <div class="showroom-canvas" id="showroom-canvas">
+        <div class="showroom-loading" role="status"><span class="showroom-loading-dot"></span>正在打開立體車庫</div>
       </div>
-
-      <div class="showroom-detail-copy">
-        <span>FOCUS / 01</span>
-        <h3>全車輪廓</h3>
-        <p>前後避震、一體車架與五刀碳輪，在棚燈下的完整比例。</p>
+      <div class="showroom-focus-rail" role="group" aria-label="特寫視角">
+        <button type="button" data-focus="hero" aria-pressed="true" disabled><span aria-hidden="true">01</span>全車<i aria-hidden="true"></i></button>
+        <button type="button" data-focus="wheels" aria-pressed="false" disabled><span aria-hidden="true">02</span>五刀碳輪<i aria-hidden="true"></i></button>
+        <button type="button" data-focus="drivetrain" aria-pressed="false" disabled><span aria-hidden="true">03</span>傳動細節<i aria-hidden="true"></i></button>
+        <button type="button" data-focus="frame" aria-pressed="false" disabled><span aria-hidden="true">04</span>車架線條<i aria-hidden="true"></i></button>
       </div>
-
-      <div class="showroom-toolbar" role="group" aria-label="展台工具列（預覽）">
-        <button type="button" class="showroom-tour-button" aria-pressed="false">▶ 導覽模式</button>
+      <div class="showroom-detail-copy" aria-live="off"><span data-detail-eyebrow>SELECTED VIEW / 01</span><h3 data-detail-title>小輪，完整的姿態。</h3><p data-detail-text>單樑輪廓與五刀碳輪，換個角度細看。</p></div>
+      <div class="showroom-toolbar" aria-label="3D 展示控制">
+        <button type="button" class="showroom-tour-button" data-action="tour" aria-pressed="false" disabled><span aria-hidden="true">▷</span><b>光影巡禮</b></button>
         <div class="showroom-mode-controls">
-          <button type="button" aria-pressed="true">◐ 360°</button>
-          <button type="button" aria-pressed="false">⊙ 細節</button>
+          <button type="button" data-action="ride" aria-pressed="false" disabled><span aria-hidden="true">↻</span>騎乘演示</button>
+          <button type="button" data-action="explode" aria-pressed="false" disabled><span aria-hidden="true">◇</span><b>分解展示</b></button>
+          <button type="button" data-action="reset" disabled><span aria-hidden="true">⌖</span>重設</button>
+          <button type="button" data-action="side" title="以正側面核對車架與輪徑比例" disabled><span aria-hidden="true">▱</span>正側面</button>
         </div>
-        <div class="showroom-paint-controls" role="group" aria-label="車漆">
-          <button type="button" aria-pressed="false" aria-label="森林綠"></button>
-          <button type="button" aria-pressed="true" aria-label="珍珠白"></button>
-          <button type="button" aria-pressed="false" aria-label="石墨灰"></button>
+        <div class="showroom-paint-controls" role="group" aria-label="概念塗裝">
+          <button type="button" data-paint="emerald" title="翠綠" aria-label="翠綠概念塗裝" aria-pressed="false" style="--showroom-paint:#126449" disabled></button>
+          <button type="button" data-paint="pearl" title="珍珠白" aria-label="珍珠白概念塗裝" aria-pressed="true" style="--showroom-paint:#eeeae1" disabled></button>
+          <button type="button" data-paint="graphite" title="石墨" aria-label="石墨概念塗裝" aria-pressed="false" style="--showroom-paint:#34414a" disabled></button>
         </div>
-        <button type="button" class="showroom-play-toggle" aria-pressed="false">Ⅱ 暫停</button>
+        <button type="button" class="showroom-play-toggle" data-action="pause" aria-pressed="false" aria-label="暫停展示動畫" disabled><span aria-hidden="true">Ⅱ</span><b>暫停</b></button>
       </div>
-    </div>
+      <p class="showroom-status" role="status" aria-live="polite">正在準備你的立體展示。</p>
+    </section>
 
     <div class="race-stage-note">
       <span><i aria-hidden="true"></i>BIRDY 3 / 五刀碳輪</span>
-      <p>畫面取自正式站 3D 展廳截圖；本預覽為靜態頁，控制項僅示意。實際零件與配備請看車庫。</p>
+      <p>依參考照片的外型建模；實際零件與配備請看車庫。此預覽直接移植正式站的 Three.js 展廳模組。</p>
       <span class="race-stage-edition">THE ATELIER / 01</span>
     </div>
   </section>
 
   <section class="race-fleet" aria-labelledby="fleet-title">
-    <div class="race-dock-heading"><h2 id="fleet-title">現役車隊 <small>11</small></h2><p>同步於 2026-11-05</p></div>
+    <div class="race-dock-heading"><h3 id="fleet-title">現役車隊 <small>11</small></h3><p>同步於 2026-11-05</p></div>
     <ul class="fleet-strip">
       <li class="is-flag"><span>01</span>大綠旗艦</li>
       <li><span>02</span>小綠</li>
@@ -114,7 +108,7 @@
   </section>
 
   <section class="race-tools-dock" aria-labelledby="race-tools-title">
-    <div class="race-dock-heading"><h2 id="race-tools-title">回到你的工作台</h2><p>車輛資料、零件配置與騎乘計算。</p></div>
+    <div class="race-dock-heading"><h3 id="race-tools-title">回到你的工作台</h3><p>車輛資料、零件配置與騎乘計算。</p></div>
     <div class="race-tool-matrix">
       <a class="race-tool" href="#">
         <span class="race-tool-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 11-8 11 8v14H5Z"/><path d="M11 27V16h10v11M11 21h10"/></svg></span>
@@ -141,27 +135,5 @@
 
   <footer class="race-home-footer"><span class="race-footer-mark" aria-hidden="true">V</span><p>車輛配置、零件與齒比設定，接著上次的紀錄繼續。</p><span>帥V 的私人車庫</span></footer>
 </main>
-
-<script>
-  // Visual-only toggles for the static preview.
-  document.querySelectorAll('[role="group"]').forEach(function (group) {
-    group.addEventListener('click', function (e) {
-      var btn = e.target.closest('button');
-      if (!btn || btn.parentElement !== group) return;
-      if (btn.classList.contains('showroom-tour-button') || btn.classList.contains('showroom-play-toggle')) {
-        btn.setAttribute('aria-pressed', btn.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
-        return;
-      }
-      group.querySelectorAll(':scope > button').forEach(function (b) { b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'); });
-      if (btn.dataset.light) document.getElementById('stage').dataset.light = btn.dataset.light;
-    });
-  });
-  document.querySelectorAll('.showroom-mode-controls, .showroom-paint-controls').forEach(function (g) {
-    g.addEventListener('click', function (e) {
-      var btn = e.target.closest('button'); if (!btn) return;
-      g.querySelectorAll('button').forEach(function (b) { b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'); });
-    });
-  });
-</script>
 </body>
 </html>

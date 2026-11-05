@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>帥V 私人車庫 · BIRDY 3 單車鑑賞室（3D 預覽）</title>
+<meta name="description" content="帥V 私人車庫 C 版 3D 立體車庫首頁預覽：以正式站 Three.js 模組移植的可互動 BIRDY 3 展廳。">
+<meta name="theme-color" content="#101112">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%228%22 fill=%22%23e2d8c3%22/%3E%3Ctext x=%2216%22 y=%2223%22 font-size=%2218%22 font-weight=%22800%22 text-anchor=%22middle%22 fill=%22%23252421%22 font-family=%22sans-serif%22%3EV%3C/text%3E%3C/svg%3E">
+</head>
+<body data-design="race" data-view="home">
+<a class="skip" href="#main">跳至主要內容</a>
+
+<div class="preview-bar" role="note">
+  <span class="preview-badge"><i aria-hidden="true"></i>C · 3D立體車庫 預覽</span>
+  <span class="preview-text">真實 Three.js 展廳 · 無登入、不存資料</span>
+  <a class="preview-link" href="https://shuai-v-bike-system.vinlai125.chatgpt.site" target="_blank" rel="noopener">正式站另開<span aria-hidden="true">↗</span></a>
+</div>
+
+<header class="shell-nav">
+  <a class="brand" href="#" aria-label="帥V 私人車庫">
+    <span class="brand-mark" aria-hidden="true">V</span>
+    <span class="brand-copy"><b>帥V 私人車庫</b><small>THE ATELIER · BIKE SYSTEM</small></span>
+  </a>
+  <nav aria-label="主要導覽">
+    <a class="active" href="#" aria-current="page"><span aria-hidden="true">◎</span>首頁</a>
+    <a href="#"><span aria-hidden="true">⌂</span>車庫管理</a>
+    <a href="#"><span aria-hidden="true">✲</span>齒比工作台</a>
+    <a href="#"><span aria-hidden="true">⌖</span>曲柄相容性</a>
+    <a href="#"><span aria-hidden="true">▥</span>BIRDY 比較</a>
+  </nav>
+  <span class="shell-date">2026.11.05</span>
+</header>
+
+<main id="main" class="race-home">
+  <section class="race-showcase" aria-labelledby="race-showcase-title">
+    <div class="race-intro">
+      <div class="race-intro-heading">
+        <p class="race-kicker"><span aria-hidden="true"></span>帥V 私人車庫 / THE ATELIER</p>
+        <h2 id="race-showcase-title"><strong class="race-bike-name">BIRDY 3</strong><span class="race-title-phrase">單車鑑賞室<span class="race-title-dot">。</span></span></h2>
+      </div>
+      <div class="race-intro-aside">
+        <p>從完整輪廓，到細微光影。<br>你的 BIRDY，值得慢慢看。</p>
+        <a class="race-garage-link" href="#">開啟我的車庫<span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+
+    <section class="bike-showroom" id="bike-showroom" data-scene-status="loading" data-render-state="loading" data-focus="hero" data-mood="atelier" aria-label="可互動的 BIRDY 3 立體展示">
+      <div class="showroom-scene-caption"><span><i aria-hidden="true"></i>BIRDY 3 / CARBON STUDY</span><p>拖曳旋轉 · 滾輪或雙指縮放</p></div>
+      <div class="showroom-light-controls" role="group" aria-label="攝影棚光線">
+        <span class="showroom-control-eyebrow">LIGHT</span>
+        <button type="button" data-mood="atelier" aria-pressed="true" disabled>棚拍</button>
+        <button type="button" data-mood="noir" aria-pressed="false" disabled>夜幕</button>
+        <button type="button" data-mood="glacier" aria-pressed="false" disabled>冷光</button>
+      </div>
+      <div class="showroom-canvas" id="showroom-canvas">
+        <div class="showroom-loading" role="status"><span class="showroom-loading-dot"></span>正在打開立體車庫</div>
+      </div>
+      <div class="showroom-focus-rail" role="group" aria-label="特寫視角">
+        <button type="button" data-focus="hero" aria-pressed="true" disabled><span aria-hidden="true">01</span>全車<i aria-hidden="true"></i></button>
+        <button type="button" data-focus="wheels" aria-pressed="false" disabled><span aria-hidden="true">02</span>五刀碳輪<i aria-hidden="true"></i></button>
+        <button type="button" data-focus="drivetrain" aria-pressed="false" disabled><span aria-hidden="true">03</span>傳動細節<i aria-hidden="true"></i></button>
+        <button type="button" data-focus="frame" aria-pressed="false" disabled><span aria-hidden="true">04</span>車架線條<i aria-hidden="true"></i></button>
+      </div>
+      <div class="showroom-detail-copy" aria-live="off"><span data-detail-eyebrow>SELECTED VIEW / 01</span><h3 data-detail-title>小輪，完整的姿態。</h3><p data-detail-text>單樑輪廓與五刀碳輪，換個角度細看。</p></div>
+      <div class="showroom-toolbar" aria-label="3D 展示控制">
+        <button type="button" class="showroom-tour-button" data-action="tour" aria-pressed="false" disabled><span aria-hidden="true">▷</span><b>光影巡禮</b></button>
+        <div class="showroom-mode-controls">
+          <button type="button" data-action="ride" aria-pressed="false" disabled><span aria-hidden="true">↻</span>騎乘演示</button>
+          <button type="button" data-action="explode" aria-pressed="false" disabled><span aria-hidden="true">◇</span><b>分解展示</b></button>
+          <button type="button" data-action="reset" disabled><span aria-hidden="true">⌖</span>重設</button>
+          <button type="button" data-action="side" title="以正側面核對車架與輪徑比例" disabled><span aria-hidden="true">▱</span>正側面</button>
+        </div>
+        <div class="showroom-paint-controls" role="group" aria-label="概念塗裝">
+          <button type="button" data-paint="emerald" title="翠綠" aria-label="翠綠概念塗裝" aria-pressed="false" style="--showroom-paint:#126449" disabled></button>
+          <button type="button" data-paint="pearl" title="珍珠白" aria-label="珍珠白概念塗裝" aria-pressed="true" style="--showroom-paint:#eeeae1" disabled></button>
+          <button type="button" data-paint="graphite" title="石墨" aria-label="石墨概念塗裝" aria-pressed="false" style="--showroom-paint:#34414a" disabled></button>
+        </div>
+        <button type="button" class="showroom-play-toggle" data-action="pause" aria-pressed="false" aria-label="暫停展示動畫" disabled><span aria-hidden="true">Ⅱ</span><b>暫停</b></button>
+      </div>
+      <p class="showroom-status" role="status" aria-live="polite">正在準備你的立體展示。</p>
+    </section>
+
+    <div class="race-stage-note">
+      <span><i aria-hidden="true"></i>BIRDY 3 / 五刀碳輪</span>
+      <p>依參考照片的外型建模；實際零件與配備請看車庫。此預覽直接移植正式站的 Three.js 展廳模組。</p>
+      <span class="race-stage-edition">THE ATELIER / 01</span>
+    </div>
+  </section>
+
+  <section class="race-fleet" aria-labelledby="fleet-title">
+    <div class="race-dock-heading"><h3 id="fleet-title">現役車隊 <small>11</small></h3><p>同步於 2026-11-05</p></div>
+    <ul class="fleet-strip">
+      <li class="is-flag"><span>01</span>大綠旗艦</li>
+      <li><span>02</span>小綠</li>
+      <li><span>03</span>大灰 EVO <em>53/39</em></li>
+      <li><span>04</span>玫瑰鳥</li>
+      <li><span>05</span>老布黑</li>
+      <li><span>06</span>小粉布</li>
+      <li><span>07</span>小沙布</li>
+      <li><span>08</span>小帥哥</li>
+      <li><span>09</span>Classic</li>
+      <li><span>10</span>小白小跑車</li>
+      <li class="is-sale"><span>11</span>小黑玩車 <em>可轉手</em></li>
+    </ul>
+  </section>
+
+  <section class="race-tools-dock" aria-labelledby="race-tools-title">
+    <div class="race-dock-heading"><h3 id="race-tools-title">回到你的工作台</h3><p>車輛資料、零件配置與騎乘計算。</p></div>
+    <div class="race-tool-matrix">
+      <a class="race-tool" href="#">
+        <span class="race-tool-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 11-8 11 8v14H5Z"/><path d="M11 27V16h10v11M11 21h10"/></svg></span>
+        <span class="race-tool-copy"><span class="race-tool-title">車庫管理</span><span class="race-tool-detail">車輛配置、零件與保養</span></span>
+        <span class="race-tool-arrow" aria-hidden="true">↗</span>
+      </a>
+      <a class="race-tool" href="#">
+        <span class="race-tool-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="16" cy="16" r="8"/><circle cx="16" cy="16" r="2.5"/><path d="M16 3v5m0 16v5M3 16h5m16 0h5M7 7l3.5 3.5m11 11L25 25M7 25l3.5-3.5m11-11L25 7"/></svg></span>
+        <span class="race-tool-copy"><span class="race-tool-title">齒比工作台</span><span class="race-tool-detail">找到順暢的巡航設定</span></span>
+        <span class="race-tool-arrow" aria-hidden="true">↗</span>
+      </a>
+      <a class="race-tool" href="#">
+        <span class="race-tool-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10" cy="21" r="5"/><circle cx="24" cy="8" r="2.5"/><path d="m14 17 8-7M5 29h23M9 26v3m14-11v11m-3-11h6"/></svg></span>
+        <span class="race-tool-copy"><span class="race-tool-title">曲柄相容性</span><span class="race-tool-detail">確認尺寸、踩距與鏈線</span></span>
+        <span class="race-tool-arrow" aria-hidden="true">↗</span>
+      </a>
+      <a class="race-tool" href="#">
+        <span class="race-tool-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 6h9v21H5Zm13 0h9v21h-9ZM8 12h3m-3 6h3m10-6h3m-3 6h3"/></svg></span>
+        <span class="race-tool-copy"><span class="race-tool-title">BIRDY 比較</span><span class="race-tool-detail">車隊現況與原作比較表</span></span>
+        <span class="race-tool-arrow" aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </section>
+
+  <footer class="race-home-footer"><span class="race-footer-mark" aria-hidden="true">V</span><p>車輛配置、零件與齒比設定，接著上次的紀錄繼續。</p><span>帥V 的私人車庫</span></footer>
+</main>
+<script type="module" src="/src/main.ts"></script>
+</body>
+</html>
